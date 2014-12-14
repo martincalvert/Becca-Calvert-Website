@@ -1,0 +1,61 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+  background-color:#BEB1D7;
+  font-weight: bold;
+}
+
+.content{
+  color: #fff;
+}
+
+#sidr > .footer{
+  background-color: inherit;
+  height: 40px;
+}
+
+.lighter-box{
+  background-color: rgba(41,23,107,.4);
+}
+
+.fa-bars{
+  margin-left: 10px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 20px;
+  background-color: rgba(253,247,215,.8);
+  color:#888;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+

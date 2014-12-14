@@ -9,40 +9,81 @@
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
     <title>Becca Calvert - Pastry Artist</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/extra.css" rel="stylesheet">
     <link href="assets/css/jquery.sidr.light.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
-      <!-- Mobile and tablet side menu -->
-    <div class="col-sm-visible col-xs-visible col-xs-2">
-      <i class="fa fa-menu"></i>
-      <div class="sidr">
-        Hola
+    <div id="sidr">
+      <ul class ="nav nav-pills nav-stacked">
+        <li class="active"><a href="index.php" style="vertical-align: middle;"><i class="fa fa-2x fa-home"></i> Home</a></li>
+        <li><a href="about.php" style="vertical-align: middle;"><i class="fa fa-2x fa-user"></i> About Myself</a></li>
+        <li><a href="portfolio.php" style="vertical-align: middle;"><i class="fa fa-2x fa-birthday-cake"></i> My Portfolio</a></li>
+        <li><a href="contact.php"><i class="fa fa-2x fa-comments"></i> Contacting Me</a></li>
+      </ul>
+      <div class="footer text-center">
+        <a href="facebook.com" style="padding-left:5px;"><i class="fa fa-2x fa-facebook"></i></a>
+        <a href="linkedin.com" style="padding-left:5px;"><i class="fa fa-2x fa-linkedin"></i> </a>
+        <a href="twitter.com" style="padding-left:5px;"><i class="fa fa-2x fa-twitter"></i> </a>
+        <a href="instagram.com"><i class="fa fa-2x fa-instagram"></i></a>
       </div>
     </div>
 
-    <!-- Desktop full menu bar -->
-    <div class="col-lg-visble col-md-visible">
+    <div class="container-fluid content">
+      <!-- Mobile and tablet side menu -->
 
+
+
+      <!-- Desktop full menu bar -->
+      <div class="hidden-xs hidden-sm">
+
+      </div>
+
+      <!-- Content -->
+      <div>
+        <div class="row">
+          <div class="col-xs-1 col-md-3 lead">
+            <div class="hidden-md hidden-lg">
+              <i class="fa fa-2x fa-bars"></i>
+            </div>
+          </div>
+          <div class="col-xs-11 col-md-9 lead">
+            <h1>Welcome!</h1>
+            <p>This is my portfolio showcase, it contains some of my best and most recent works. Take a look around and let me know what you think! I am open to job offers, project offers, or contract offers. Enjoy!</p>
+          </div>
+        </div>
+        <div class="row lighter-box">
+          <div class="col-xs-1 col-md-3"></div>
+          <div class="col-xs-11 col-md-9 lead">
+            <h2>Experience</h2>
+            <p>Small tid bit on past projects / jobs, larger portion will be on the about me page.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer text-center">
+       Developed By Martin Calvert
+      </div>
     </div>
-
-    <!-- Content -->
-    <div class="content">
-
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-
-    </div>
-
     <!-- JS Load Area -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.sidr.min.js"></script>
     <script>
       $(function(){
-        $().sidr( [options] );
+        $('.fa-bars').sidr({displace:false});
+        $('.fa-bars').on('click',function(){
+          $('body').on('click',function(){
+              $.sidr('close');
+          })
+        })
+        if($(window).width() > 992){
+          $.sidr('open');
+        }
+        $("#sidr").on("click",function(e) {
+          e.stopPropagation();
+        });
       });
     </script>
   </body>
