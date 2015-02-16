@@ -1,25 +1,48 @@
+/*
+color: #532f57
+background: #401945
+border: #ff8272
+active-link: #b93a3e
+
+*/
+
+body{
+  background-color:#401945;
+  background-image: url('../images/backgroun/d.png');
+  font-family: cursive;
+}
+
 nav{
   margin-top: 20px;
-  border: #5d465a solid 1px !important;
+  border-bottom: 0 !important;
 }
 
 .navbar-nav > li > a{
-  font-size: 18px;
+  font-size: 22px;
+  color: #532f57 !important;
+  background-color: inherit !important;
 }
 
 .navbar, .navbar-default .navbar-nav > .active > a{
-  background-color:#f6f3f5;
-  color: #3d1a3a;
+  color: #532f57;
 }
 
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
+    border-bottom: #888 solid 1px !important;
+}
+
+.navbar-default{
+  background-color: transparent !important;
 }
 
 .navbar .navbar-collapse {
     text-align: center;
     margin-right: 20px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: #111 0px 4px 30px 2px;
 }
 
 .name{
@@ -33,15 +56,32 @@ nav{
     font-size: 40px !important;
   }
   .navbar-nav > li > a{
-    font-size: 16px;
+    font-size: 19px;
   }
 }
 
 @media (max-width: 765px){
+  nav{
+    border-bottom: #888 solid 1px !important;
+    margin-top: 0;
+  }
+  .navbar .navbar-nav {
+    border-bottom: 0 !important;
+  }
   .name{
     font-size: 25px !important;
     margin-top: 3px;
-    color: #3d1a3a !important;
+    color: #ffffff !important;
+  }
+  .navbar-collapse{
+    border-top: 0;
+    background-color: #fff !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .navbar-default{
+    background-color: #fff !important;
+    color: #532f57 !important;
   }
 }
 
@@ -56,8 +96,6 @@ nav{
 }
 
 .body{
-  margin-top: 80px;
-  background-color: rgba(246,243,245,.75);
-  box-shadow: #eee 0px 0px 50px;
-  color: #3d1a3a;
+  color:#d8d1d9 !important;
+  margin-top: 100px;
 }
