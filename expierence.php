@@ -20,7 +20,7 @@
               <p>
                 <ul style="list-style:none;">
                   <li><i class="fa fa-birthday-cake"></i> Cake Decorator - Ralphs (2009-2010)</li>
-                  <li><i class="fa fa-birthday-cake"></i> Head Cake Decorator - Creme De La Creme (2010-2014)
+                  <li><i class="fa fa-birthday-cake"></i> Head Cake Decorator - Creme De La Creme (2010-2014)</li>
                   <li><i class="fa fa-birthday-cake"></i> Tons of freelance orders</li>
                 </ul>
               </p>

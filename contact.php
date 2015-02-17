@@ -1,4 +1,4 @@
-<?php include 'head.php'?>
+<?php include 'head.php' ?>
   <div class="row color-box-md">
     <div class="col-sm-6 col-xs-12">
       <h2>How to contact me?</h2>
@@ -8,32 +8,31 @@
       <button style="margin-top:40px;" class="btn btn-block light-box-shadow"><i class="fa fa-3x fa-envelope"></i></button>
     </div>
   </div>
-      <div class="row color-box-dk">
-        <div class="col-xs-12">
-            <h2>The Form</h2>
-            <form class="form-horizontal">
-              <div style="margin-bottom:5px;" class="col-xs-12 text-center text-alert"></div>
-              <div class="form-group">
-                <label class="col-xs-12 col-sm-2">First Name</label>
-                <input type="text" name="first_name" class="col-xs-12 col-sm-4"></input>
-                <label class="col-xs-12 col-sm-2">Last Name</label>
-                <input type="text" name="last_name" class="col-xs-12 col-sm-4"></input>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-12 col-sm-2">E-mail</label>
-                <input type="email" name="email" class="col-xs-12 col-sm-4"></input>
-                <label class="col-xs-12 col-sm-2">Phone #</label>
-                <input type="text" name="phone" class="col-xs-12 col-sm-4"></input>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-12 col-sm-3">What you are contacting me about?</label>
-                <textarea name="content" class="col-xs-12 col-sm-9"></textarea>
-              </div>
-              <span id="submit" class="btn btn-block light-box-shadow">SUBMIT</span>
-            </form>
-          </div>
+  <div class="row color-box-dk">
+    <div class="col-xs-12">
+      <h2>The Form</h2>
+      <form class="form-horizontal">
+        <div style="margin-bottom:5px;" class="col-xs-12 text-center text-alert"></div>
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-2">First Name</label>
+          <input type="text" name="first_name" class="col-xs-12 col-sm-4"></input>
+          <label class="col-xs-12 col-sm-2">Last Name</label>
+          <input type="text" name="last_name" class="col-xs-12 col-sm-4"></input>
         </div>
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-2">E-mail</label>
+          <input type="email" name="email" class="col-xs-12 col-sm-4"></input>
+          <label class="col-xs-12 col-sm-2">Phone #</label>
+          <input type="text" name="phone" class="col-xs-12 col-sm-4"></input>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3">What you are contacting me about?</label>
+          <textarea name="content" class="col-xs-12 col-sm-9"></textarea>
+        </div>
+        <span id="submit" class="btn btn-block light-box-shadow">SUBMIT</span>
+      </form>
     </div>
+  </div>
     <div class="row color-box-lt">
       <div class="col-xs-12 lead">
         <div class="row">

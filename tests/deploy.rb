@@ -12,7 +12,7 @@ end
 
 def test_count(tem,hea,foo)
   tem.each do |k,v|
-    return k unless (tem[k] + hea[k] +  foo[k] == 0)
+    return k unless (tem[k] + hea[k] +  foo[k]) == 0
   end
   true
 end
