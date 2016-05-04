@@ -11,28 +11,139 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/extra.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/ekko-lightbox.min.css" rel="stylesheet">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@beccajoyc">
+    <meta name="twitter:creator" content="@sdla4ever">
+    <meta name="twitter:title" content="Becca Calvert - Pastry Artist">
+    <!-- <meta name="twitter:description" content="Full Stack Software Engineer & Tech Solutions Designer - This is my personal website where I will say a little about myself, my passions and my career.">
+    <meta name="twitter:image" content="http://martin-calvert.com/assets/img/twitter-card.png"> -->
   </head>
   <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container collapse navbar-collapse">
-          <div class="text-center">
-          <ul class='nav navbar-nav'>
-            <li><a href='#'>Hi</a></li>
-            <li><a href='#'>Hi</a></li>
-            <li><a href='#'>Hi</a></li>
-            <li><a href='#'>Hi</a></li>
-          </ul>
-        </div>
-        </div>
+    <div>
+      <nav class="navbar navbar-default navbar-fixed-top purple-navbar">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
-      <div class="container text-center" style="color:#fff; margin-top:4.5em;">
+      <div id="home" class="container text-center page-section purple-section">
         <i class="fa fa-4x fa-birthday-cake"></i>
-        <h1>Becca's website is in the works.</h1>
+        <h1>Welcome</h1>
+        <h3>Please check back in the coming days</h3>
+      </div>
+      <div id="bio" class="container text-center page-section white-section">
+        <h1>Experience</h1>
+        <h3>block of text about working at cake stuff homie</h3>
+      </div>
+      <div id="photos" class="container text-center page-section purple-section">
+        <h1>Previous Works</h1>
+        <div class="row image-row">
+          <a href="assets/images/image_1.JPG" data-toggle='lightbox' data-gallery="multiimages" data-title="" class="col-sm-4"><img class='img-responsive' src="assets/images/image_1.JPG"/></a>
+          <a href="assets/images/image_1.JPG" data-toggle='lightbox' data-gallery="multiimages" data-title="" class="col-sm-4"><img class='img-responsive' src="assets/images/image_1.JPG"/></a>
+          <a href="assets/images/image_1.JPG" data-toggle='lightbox' data-gallery="multiimages" data-title="" class="col-sm-4"><img class='img-responsive' src="assets/images/image_1.JPG"/></a>
+        </div>
+        <div class="row image-row">
+          <a href="assets/images/image_1.JPG" data-toggle='lightbox' data-gallery="multiimages" data-title="" class="col-sm-4"><img class='img-responsive' src="assets/images/image_1.JPG"/></a>
+          <a href="assets/images/image_1.JPG" data-toggle='lightbox' data-gallery="multiimages" data-title="" class="col-sm-4"><img class='img-responsive' src="assets/images/image_1.JPG"/></a>
+          <a href="assets/images/image_1.JPG" data-toggle='lightbox' data-gallery="multiimages" data-title="" class="col-sm-4"><img class='img-responsive' src="assets/images/image_1.JPG"/></a>
+        </div>
+      </div>
+      <div id="contact" class="container text-center page-section white-section">
+        <h1>Contacting Myself</h1>
         <h3>Please check back in the coming days</h3>
       </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/ekko-lightbox.js"></script>
+    <script>
+			$(document).ready(function ($) {
+				// delegate calls to data-toggle="lightbox"
+				$(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+					event.preventDefault();
+					return $(this).ekkoLightbox({
+						onShown: function() {
+							if (window.console) {
+								return console.log('onShown event fired');
+							}
+						},
+						onContentLoaded: function() {
+							if (window.console) {
+								return console.log('onContentLoaded event fired');
+							}
+						},
+						onNavigate: function(direction, itemIndex) {
+							if (window.console) {
+								return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+							}
+						}
+					});
+				});
+
+				$(document).delegate('*[data-gallery="navigateTo"]', 'click', function(event) {
+					event.preventDefault();
+					return $(this).ekkoLightbox({
+						onShown: function() {
+							var lb = this;
+							$(lb.modal_content).on('click', '.modal-footer a#jumpit', function(e) {
+								e.preventDefault();
+								lb.navigateTo(2);
+							});
+							$(lb.modal_content).on('click', '.modal-footer a#closeit', function(e) {
+								e.preventDefault();
+								lb.close();
+							});
+						}
+					});
+				});
+
+			});
+    </script>
+    <script>
+      var menu = false
+      function isElementInViewport(pos) {
+          if (pos > $(window).height()){
+            changeNav(false)
+          }else{
+            changeNav(true)
+          };
+      }
+      function changeNav(e){
+        if (e == true){
+          $('nav').fadeIn(1000, function() {
+            $(this).removeClass("white-navbar");
+            $(this).addClass("purple-navbar");
+            menu = false
+          });
+        }else{
+          $('nav').fadeIn(1000, function() {
+            $(this).removeClass("purple-navbar");
+            $(this).addClass("white-navbar");
+            menu = true
+          });
+        }
+      }
+      function handleChange(){
+          isElementInViewport(window.pageYOffset)
+      }
+      //jQuery
+      $(window).on('DOMContentLoaded load resize scroll', handleChange);
+    </script>
   </body>
 </html>
