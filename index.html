@@ -36,10 +36,10 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="#home">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="#bio">Bio</a></li>
-              <li><a href="#photos">Works</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a id='test' href="#" data-target='home'>Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="#" data-target='bio'>Bio</a></li>
+              <li><a href="#" data-target='photos'>Works</a></li>
+              <li><a href="#" data-target='contact'>Contact</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -74,6 +74,48 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/ekko-lightbox.js"></script>
+    <script>
+      var menu = false
+      function isElementInViewport(pos) {
+          if (pos > $(window).height()){
+            changeNav(false)
+          }else{
+            changeNav(true)
+          };
+      }
+      function changeNav(e){
+        if (e == true){
+          $('nav').fadeIn(1000, function() {
+            $(this).removeClass("white-navbar");
+            $(this).addClass("purple-navbar");
+            menu = false
+          });
+        }else{
+          $('nav').fadeIn(1000, function() {
+            $(this).removeClass("purple-navbar");
+            $(this).addClass("white-navbar");
+            menu = true
+          });
+        }
+      }
+      function handleChange(){
+          isElementInViewport(window.pageYOffset)
+      }
+
+      (function($) {
+        $.fn.goTo = function() {
+            $('html, body').animate({
+                scrollTop: $(this).offset().top - 50 + 'px'
+            }, 'fast');
+            return this; // for chaining...
+        }
+      })(jQuery);
+
+
+
+      //jQuery
+      $(window).on('DOMContentLoaded load resize scroll', handleChange);
+    </script>
     <script>
 			$(document).ready(function ($) {
 				// delegate calls to data-toggle="lightbox"
@@ -115,37 +157,12 @@
 					});
 				});
 
+        $(document).delegate('li a', 'click', function(e){
+          e.preventDefault();
+          $('#' + $(this).data()['target']).goTo()
+        })
+
 			});
-    </script>
-    <script>
-      var menu = false
-      function isElementInViewport(pos) {
-          if (pos > $(window).height()){
-            changeNav(false)
-          }else{
-            changeNav(true)
-          };
-      }
-      function changeNav(e){
-        if (e == true){
-          $('nav').fadeIn(1000, function() {
-            $(this).removeClass("white-navbar");
-            $(this).addClass("purple-navbar");
-            menu = false
-          });
-        }else{
-          $('nav').fadeIn(1000, function() {
-            $(this).removeClass("purple-navbar");
-            $(this).addClass("white-navbar");
-            menu = true
-          });
-        }
-      }
-      function handleChange(){
-          isElementInViewport(window.pageYOffset)
-      }
-      //jQuery
-      $(window).on('DOMContentLoaded load resize scroll', handleChange);
     </script>
   </body>
 </html>
