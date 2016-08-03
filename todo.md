@@ -6,4 +6,5 @@
 - bio
 - email
 - get font
-- navbar bottom border spatulas
+- navbar bottom border whisks
+- save for web the photos
